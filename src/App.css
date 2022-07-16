@@ -1,0 +1,181 @@
+.container {
+    width: 800px;
+    margin: 40px auto;
+    background: #161a2b;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 40px;
+    width: 20ch;
+    border-right: 1px solid transparent;
+    font-weight: bold;
+    margin: 20px 0;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: -2px;
+    animation: control-width 3s steps(25) 2s both, blink 0.5s 30;
+}
+
+.todo-form {
+    position: relative;
+    padding: 15px;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.todo-form form .todo-input {
+    display: inline-block;
+    background-color: transparent;
+    padding: 15px;
+    width: calc(100% - 15px);
+    border: 2px solid #5d0cff;
+    color: white;
+    font-size: 18px;
+}
+
+.todo-form form .todo-input.update {
+    border: 2px solid #149fff;
+}
+
+.todo-form form .todo-input:focus {
+    outline: none;
+    border-color: #3316ff;
+}
+
+.todo-form form .todo-input::placeholder {
+    color: #777;
+}
+
+.todo-form form button {
+    position: absolute;
+    width: 80px;
+    height: 55px;
+    right: 12px;
+    font-size: 14px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient( 90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%);
+    color: white;
+    cursor: pointer;
+}
+
+.todo-form form button.update {
+    background: linear-gradient( 90deg, rgba(20, 159, 255, 1) 0%, rgba(17, 122, 255, 1) 100%);
+}
+
+.todo-form form button:hover {
+    background: linear-gradient( 90deg, #3316ff 0%, #5d0cff 100%);
+}
+
+.todo-form form button.update:hover {
+    background: linear-gradient( 90deg, #616cff 0%, #1491e9 100%);
+}
+
+.todo-item {
+    padding: 15px 25px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px auto;
+    background: linear-gradient( 90deg, rgba(255, 118, 20, 1) 0%, rgba(255, 84, 17, 1) 100%);
+    border-radius: 5px;
+    color: white;
+}
+
+.todo-item:nth-child(4n + 1) {
+    background: linear-gradient( 90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%);
+}
+
+.todo-item:nth-child(4n + 2) {
+    background: linear-gradient( 90deg, rgba(255, 12, 241, 1) 0%, rgba(250, 0, 135, 1) 100%);
+}
+
+.todo-item:nth-child(4n + 3) {
+    background: linear-gradient( 90deg, rgba(20, 159, 255, 1) 0%, rgba(17, 122, 255, 1) 100%);
+}
+
+.todo-item:last-child {
+    margin-bottom: 30px;
+}
+
+.todo-item.complete {
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+.todo-item .todo-text {
+    font-size: 20px;
+    width: 90%;
+}
+
+.todo-item .icons {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    font-size: 20px;
+}
+
+.todo-item .delete-icon,
+.todo-item .edit-icon {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+.task-stats {
+    width: 800px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.task-stats .tasks-count,
+.task-stats .task-completed {
+    padding: 10px;
+}
+
+.task-stats .tasks-count span,
+.task-stats .task-completed span {
+    color: white;
+    padding: 5px 9px;
+    font-size: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.task-stats .tasks-count span {
+    background-color: #e91e63;
+}
+
+.task-stats .task-completed span {
+    background-color: #24c71e;
+}
+
+@keyframes control-width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 20ch;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-right-color: white;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}

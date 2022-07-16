@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-style: italic;
+    background: linear-gradient( 90deg, rgba(48, 16, 255, 1) 0%, rgba(100, 115, 255, 1) 100%);
+}
